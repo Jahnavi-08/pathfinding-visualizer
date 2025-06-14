@@ -1,38 +1,125 @@
-.App {
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #e0f7fa, #f3e5f5);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.card {
+  background-color: white;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 95%;
+  max-width: 1200px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.description {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+  flex-wrap: wrap;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.algo-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+}
+
+.dijkstra { background-color: #1976d2; }
+.astar    { background-color: #009688; }
+.bfs      { background-color: #7b1fa2; }
+.dfs      { background-color: #e65100; }
+
+.visualize-btn {
+  background-color: #43a047;
+  color: white;
+  font-weight: bold;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+}
+
+.reset-btn {
+  background-color: #ef5350;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 7px 16px;
+  border-radius: 5px;
+}
+
+.clear-btn {
+  background-color: #ffb300;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 7px 16px;
+  border-radius: 5px;
+}
+
+.grid {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.node {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #e0e0e0;
+  display: inline-block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.node-start {
+  background-color: #00bcd4;
+  animation: pulse-start 1.5s infinite;
+}
+
+.node-end {
+  background-color: #ff4081;
+  animation: pulse-end 1.5s infinite;
+}
+
+.node-wall {
+  background-color: #212121;
+}
+
+.node-visited {
+  background-color: #90caf9;
+}
+
+.node-shortest-path {
+  background-color: gold;
+}
+
+@keyframes pulse-start {
+  0% { box-shadow: 0 0 0 0 rgba(0, 188, 212, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(0, 188, 212, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 188, 212, 0); }
+}
+
+@keyframes pulse-end {
+  0% { box-shadow: 0 0 0 0 rgba(255, 64, 129, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 64, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 64, 129, 0); }
 }
